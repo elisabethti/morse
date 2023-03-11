@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rse_test_app/theme.dart';
+import 'package:rse_test_app/views/widgets/primary_button.dart';
 
 class Onboarding extends StatelessWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -14,9 +15,9 @@ class Onboarding extends StatelessWidget {
               // Landscape
               return Container(
                 padding: EdgeInsets.only(
-                    left: screenLRMargin,
-                    right: screenLRMargin,
-                    top: screenTopMargin,
+                    left: dpToPx(context, screenLRMargin),
+                    right: dpToPx(context, screenLRMargin),
+                    top: dpToPx(context, screenTopMargin),
                     bottom: MediaQuery.of(context).size.height * 0.05),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
@@ -139,25 +140,7 @@ class Onboarding extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: largeMargin),
-                    TextButton(
-                      style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(blueColor),
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(lightTextColor),
-                          fixedSize: MaterialStateProperty.all<Size>(
-                              Size(MediaQuery.of(context).size.width, 48))),
-                      onPressed: () {
-                        // Aksi yang dilakukan ketika tombol ditekan
-                      },
-                      child: Text('Buat Janji Sekarang', style: textBold14),
-                    )
+                    const PrimaryButton('Buat Janji Sekarang', '/login')
                   ],
                 ),
               );
