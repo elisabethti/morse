@@ -140,7 +140,7 @@ class Onboarding extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: largeMargin),
-                    const PrimaryButton('Buat Janji Sekarang', '/login')
+                    const PrimaryButton('Buat Janji Sekarang', '/beranda/guest')
                   ],
                 ),
               );
