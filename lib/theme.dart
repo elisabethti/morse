@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 //Daftar Warna
 const Color backgroundColor = Color(0xffFAFAFA);
+const Color whiteColor = Color(0xffFFFFFF);
 const Color blueColor = Color(0xff007DFF);
 const Color lightBlueColor = Color(0xff65B0FF);
 const Color redColor = Color(0xffE91E63);
@@ -13,6 +14,7 @@ const Color formBackgroundColor = Color(0xffE6EBEF);
 const Color blueGreyColor = Color(0xffE8F2FD);
 const Color darkBlueGreyTextColor = Color(0xffA0BBD7);
 const Color blueShadow = Color(0xffBADBFD);
+const Color greenColor = Color(0xff0CBC8B);
 
 //Fungsi Konversi PX to DP
 double pxToDp(BuildContext context, double px) {
@@ -38,12 +40,14 @@ TextStyle titleBold27 =
     GoogleFonts.poppins(fontSize: 27, fontWeight: FontWeight.w700, height: 1.1);
 TextStyle title27 =
     GoogleFonts.poppins(fontSize: 27, fontWeight: FontWeight.w600, height: 1.1);
-TextStyle titleBold21 =
+TextStyle textBold21 =
     GoogleFonts.poppins(fontSize: 21, fontWeight: FontWeight.w700);
 TextStyle title21 =
     GoogleFonts.poppins(fontSize: 21, fontWeight: FontWeight.w600);
 TextStyle textRegular16 =
     GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500);
+TextStyle textBold16 =
+    GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w700);
 TextStyle title16 =
     GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600);
 TextStyle textMedium14 =
@@ -52,6 +56,8 @@ TextStyle textRegular14 =
     GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500);
 TextStyle textBold14 =
     GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w700);
+TextStyle title14 =
+    GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600);
 TextStyle textRegular12 =
     GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500);
 TextStyle titleBold12 =

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
 import '../../../theme.dart';
@@ -11,8 +12,20 @@ class JanjiHariIni extends StatefulWidget {
 }
 
 class _JanjiHariIniState extends State<JanjiHariIni> {
+  bool isEmpty = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initializeDateFormatting('id');
+  }
+
   @override
   Widget build(BuildContext context) {
+    return isEmpty ? janjiKosong() : janjiHariIni();
+  }
+
+  Widget janjiHariIni() {
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(defaultMargin),
@@ -23,7 +36,7 @@ class _JanjiHariIniState extends State<JanjiHariIni> {
         children: [
           Text(
             "Janji Hari Ini",
-            style: titleBold12,
+            style: titleBold12.copyWith(color: darkTextColor),
           ),
           SizedBox(
             height: smallMargin,
@@ -63,6 +76,9 @@ class _JanjiHariIniState extends State<JanjiHariIni> {
                           "dr. Thianti Styaningrum Sp.KK",
                           style: titleBold12.copyWith(color: lightTextColor),
                         ),
+                        SizedBox(
+                          height: xsmallMargin,
+                        ),
                         Text(
                           "Spesialis Kulit Kelamin",
                           style: textMedium9.copyWith(color: lightTextColor),
@@ -89,7 +105,7 @@ class _JanjiHariIniState extends State<JanjiHariIni> {
                       Row(
                         children: [
                           Image.asset(
-                            'assets/icons/date_white.png',
+                            'assets/icons/date-white.png',
                             width: MediaQuery.of(context).size.width * 0.05,
                           ),
                           SizedBox(
@@ -108,7 +124,7 @@ class _JanjiHariIniState extends State<JanjiHariIni> {
                       Row(
                         children: [
                           Image.asset(
-                            'assets/icons/clock_white.png',
+                            'assets/icons/clock-white.png',
                             width: MediaQuery.of(context).size.width * 0.05,
                           ),
                           SizedBox(
@@ -139,14 +155,31 @@ class _JanjiHariIniState extends State<JanjiHariIni> {
                 backgroundColor: MaterialStateProperty.all<Color>(blueShadow),
                 foregroundColor: MaterialStateProperty.all<Color>(blueColor),
                 fixedSize: MaterialStateProperty.all<Size>(
-                    Size(MediaQuery.of(context).size.width, 48))),
-            onPressed: () {},
+                    Size(MediaQuery.of(context).size.width, 44))),
+            onPressed: () {
+              Navigator.pushNamed(context, "/janji/all");
+            },
             child: Text("lihat semua",
                 style: title9.copyWith(
                   decoration: TextDecoration.underline,
                 )),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget janjiKosong() {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.all(defaultMargin),
+      decoration: BoxDecoration(
+          color: blueGreyColor, borderRadius: BorderRadius.circular(10)),
+      child: Center(
+        child: Text(
+          'Belum ada janji',
+          style: title12.copyWith(color: darkBlueGreyTextColor),
+        ),
       ),
     );
   }

@@ -21,12 +21,12 @@ class HeaderBerandaGuest extends StatelessWidget {
               style: textRegular14.copyWith(color: darkTextColor),
             ),
             Text("Apa kabar hari ini?",
-                style: titleBold21.copyWith(color: darkTextColor))
+                style: textBold21.copyWith(color: darkTextColor))
           ],
         ),
         Image.asset(
           "assets/images/guest_profile.png",
-          width: MediaQuery.of(context).size.width * 0.125,
+          width: MediaQuery.of(context).size.width * 0.110,
         )
       ],
     );
